@@ -9,18 +9,16 @@ def creaHeroe(nombre, hitpoints, ataque, velocidad):
 
 def calcularPuntajeHeroe(heroe):
     # calcula el puntaje de un heroe
-    return  heroe.get("attack") * heroe.get("velocidad") + heroe.get("hp")
+    return  heroe.get("atk") * heroe.get("spd") + str(heroe.get("hp"))
+
 
 def encontrarMejorHeroe(listaHeroes):
-    # se debe buscar entre todos los heroes de la lista
-    # cual es el que tiene el mayor puntaje y retornarlo
-    # por ahora solo se esta entregando el 1er heroe
-    # pero eso debe ser reemplazado por la implementacion suya
-    return listaHeroes[0]
+    for heroe in listaHeroes:
+        print( heroe.get("nombre"), calcularPuntajeHeroe(heroe) )
 
-heroe1 = creaHeroe("Link", 100, 20, 5)
-heroe2 = creaHeroe("Samus", 150, 30, 2)
-heroe3 = creaHeroe("Patuco", 1000, 1, 4)
+heroe1 = creaHeroe("Link", 100, '20', 5)
+heroe2 = creaHeroe("Samus", 150, '30', 2)
+heroe3 = creaHeroe("Patuco", 1000, '1', 4)
 
 misHeroes  = [ heroe1, heroe2, heroe3 ]
 
